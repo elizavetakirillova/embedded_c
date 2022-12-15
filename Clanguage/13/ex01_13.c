@@ -7,15 +7,16 @@ int main()
         int b;
     }; //__attribute__((packed));
 
-    struct test st[10];
+    //struct test st;
+    struct test *ptr;
+    //ptr = &st;
 
     char str[10] = {'A', 0, 0, 0, 0, 'B', 0, 0, 0, 0};
 
-    st[0].a = str[0];
-    st[0].b = str[5];
+    ptr = str;
 
-    printf("%c\n", st[0].a);
-    printf("%c", st[0].b);
+    printf("%c\n", ptr->a);
+    printf("%c\n", ptr->b);
 
     return 0;
 }
