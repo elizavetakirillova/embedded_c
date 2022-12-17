@@ -4,10 +4,10 @@
 
 void get_nums (int *firstNum, int *secondNum);
 void put_menu (int *firstNum, int *secondNum, int *result);
-void case_minus (int firstNum, int secondNum, int *result);
-void case_plus (int firstNum, int secondNum, int *result);
-void case_multiple (int firstNum, int secondNum, int *result);
-void case_div (int firstNum, int secondNum, int *result);
+void case_minus (int *firstNum, int *secondNum, int *result);
+void case_plus (int *firstNum, int *secondNum, int *result);
+void case_multiple (int *firstNum, int *secondNum, int *result);
+void case_div (int *firstNum, int *secondNum, int *result);
 void put_result (int result);
 
 int main()
@@ -34,9 +34,9 @@ void get_nums (int *firstNum, int *secondNum)
 
 void put_menu (int *firstNum, int *secondNum, int *result)
 {
-    get_nums (&firstNum, &secondNum);
+    get_nums (firstNum, secondNum);
 
-    printf("%d, %d", firstNum, secondNum);
+    printf("%ls, %ls", firstNum, secondNum);
 
     printf("Выберите операцию:\n");
     printf("1 a - b\n");
@@ -69,24 +69,24 @@ void put_menu (int *firstNum, int *secondNum, int *result)
 }
 
 
-void case_minus (int firstNum, int secondNum, int *result)
+void case_minus (int *firstNum, int *secondNum, int *result)
 {
-    *result = firstNum - secondNum;
+    *result = *firstNum - *secondNum;
 }
 
-void case_plus (int firstNum, int secondNum, int *result)
+void case_plus (int *firstNum, int *secondNum, int *result)
 {
-    *result = firstNum + secondNum;
+    *result = *firstNum + *secondNum;
 }
 
-void case_multiple (int firstNum, int secondNum, int *result)
+void case_multiple (int *firstNum, int *secondNum, int *result)
 {
-    *result = firstNum * secondNum;
+    *result = *firstNum * *secondNum;
 }
 
-void case_div (int firstNum, int secondNum, int *result)
+void case_div (int *firstNum, int *secondNum, int *result)
 {
-    *result = firstNum / secondNum;
+    *result = *firstNum / *secondNum;
 }
 
 void put_result (int result)
